@@ -2,8 +2,8 @@
 // Copyright (c) 2019
 // Vasyaev Anton
 //
-#ifndef DETECT_HPP
-#define DETECT_HPP
+#ifndef CALLISTO_MACRO_DETECT_H
+#define CALLISTO_MACRO_DETECT_H
 
 //
 // DETECT OS

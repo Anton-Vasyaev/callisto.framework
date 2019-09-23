@@ -2,10 +2,10 @@
 // Copyright (c) 2019
 // Vasyaev Anton
 //
-#ifndef EXPORT_HPP
-#define EXPORT_HPP
+#ifndef CALLISTO_EXPORT_H
+#define CALLISTO_EXPORT_H
 
-#include <Macros/Detect.hpp>
+#include <Native/MacroDetect.h>
 
 
 #ifdef MACRO_DETECT_WINDOWS
