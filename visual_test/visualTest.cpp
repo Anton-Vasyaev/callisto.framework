@@ -5,10 +5,10 @@
 
 // project
 #include <Tests/TestMacroDetect.hpp>
-#include <Tests/TestConcurrentBuffer.hpp>
+#include <Tests/TestExceptions.hpp>
 
 int main()
 {
     test_macro_detect();
-    test_concurrent_buffer();
+    test_exceptions();
 }

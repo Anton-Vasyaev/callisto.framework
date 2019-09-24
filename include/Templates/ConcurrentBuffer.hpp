@@ -6,13 +6,18 @@
 #define CONCURRENT_BUFFER_HPP
 
 // std
+//
+// Copyright (c) 2019
+// Vasyaev Anton
+//
+
 #include <deque>
 #include <mutex>
 
 
 namespace Callisto
 {
-	namespace Templates
+	namespace Framework
 	{
 		template<typename B>
 		class ConcurrentBuffer

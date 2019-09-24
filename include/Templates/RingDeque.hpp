@@ -1,3 +1,8 @@
+//
+// Copyright (c) 2019
+// Vasyaev Anton
+//
+
 #ifndef CALLISTO_RING_DEQUE_HPP
 #define CALLISTO_RING_DEQUE_HPP
 
