@@ -1,4 +1,6 @@
 build
+out
 .vs
 .vscode
 output_files
+CMakeSettings.json

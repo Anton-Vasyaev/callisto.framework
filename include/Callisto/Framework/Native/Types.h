@@ -6,7 +6,7 @@
 #define CALLISTO_TYPES_H
 
 // macro
-#include <Callisto/Native/MacroDetect.h>
+#include <Callisto/Framework/Native/MacroDetect.h>
 // std
 #include <cstdint>
 

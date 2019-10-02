@@ -4,7 +4,7 @@
 //
 
 // parent header
-#include <Callisto/Exception/HoldStringException.hpp>
+#include <Callisto/Framework/Exception/HoldStringException.hpp>
 
 
 namespace Callisto::Framework

@@ -5,7 +5,7 @@
 #ifndef CALLISTO_EXPORT_H
 #define CALLISTO_EXPORT_H
 
-#include <Callisto/Native/MacroDetect.h>
+#include <Callisto/Framework/Native/MacroDetect.h>
 
 
 #ifdef MACRO_DETECT_WINDOWS

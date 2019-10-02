@@ -9,7 +9,7 @@
 #include <string>
 #include <exception>
 // project
-#include <Callisto/Native/LibExport.h>
+#include <Callisto/Framework/Native/LibExport.h>
 
 namespace Callisto::Framework
 {
