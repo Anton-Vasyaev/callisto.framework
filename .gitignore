@@ -1,3 +1,4 @@
 build
+.vs
 .vscode
-output
+output_files

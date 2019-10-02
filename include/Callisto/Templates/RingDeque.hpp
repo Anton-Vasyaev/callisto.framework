@@ -10,8 +10,8 @@
 #include <memory>
 #include <stdexcept>
 // project
-#include <Native/Types.h>
-#include <Auxiliary/Enums.hpp>
+#include <Callisto/Native/Types.h>
+#include <Callisto/Auxiliary/Enums.hpp>
 
 
 

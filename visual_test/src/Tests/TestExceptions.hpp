@@ -7,7 +7,7 @@
 #define CALLISTO_FRAMEWORK_TEST_EXCEPTIONS_HPP
 
 // test component
-#include <Exception/HoldStringException.hpp>
+#include <Callisto/Exception/HoldStringException.hpp>
 // std
 #include <iostream>
 

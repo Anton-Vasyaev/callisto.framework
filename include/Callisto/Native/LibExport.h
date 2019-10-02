@@ -5,12 +5,12 @@
 #ifndef CALLISTO_EXPORT_H
 #define CALLISTO_EXPORT_H
 
-#include <Native/MacroDetect.h>
+#include <Callisto/Native/MacroDetect.h>
 
 
 #ifdef MACRO_DETECT_WINDOWS
-    #define CALLISTO_API __declspec( dllexport ) 
-    #define CALLISTO_CALL __cdecl
+    #define CALLISTO_EXPORT		__declspec( dllexport ) 
+    #define CALLISTO_CALL		__cdecl
 #endif
 
 

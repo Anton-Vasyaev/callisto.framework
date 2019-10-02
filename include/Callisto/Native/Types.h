@@ -6,7 +6,7 @@
 #define CALLISTO_TYPES_H
 
 // macro
-#include <Native/MacroDetect.h>
+#include <Callisto/Native/MacroDetect.h>
 // std
 #include <cstdint>
 
@@ -14,8 +14,8 @@
 
 typedef int8_t      t_int8;
 typedef uint8_t     t_uint8;
-typedef int8_t      t_byte;
-typedef uint8_t     t_ubyte;
+typedef uint8_t     t_byte;
+typedef int8_t		t_sbyte;
 
 typedef int16_t     t_int16;
 typedef int16_t     t_uint16;

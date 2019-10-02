@@ -4,44 +4,53 @@
 //
 
 // parent header
-#include <Exception/HoldStringException.hpp>
+#include <Callisto/Exception/HoldStringException.hpp>
 
 
-
+namespace Callisto::Framework
+{
 #pragma region ConstructAndDestruct
 
-Callisto::Framework::HoldStringException::HoldStringException(
-    std::string& errorMessage
-)
-{
-    this->errorMessage = errorMessage;
-}
+	HoldStringException::HoldStringException(
+		std::string& errorMessage
+	)
+	{
+		this->errorMessage = errorMessage;
+	}
 
-Callisto::Framework::HoldStringException::HoldStringException(
-    std::string&& errorMessage
-)
-{
-    this->errorMessage = std::move(errorMessage);
-}
+	HoldStringException::HoldStringException(
+		std::string&& errorMessage
+	)
+	{
+		this->errorMessage = std::move(errorMessage);
+	}
+
+	HoldStringException::HoldStringException(
+		const char* errorMessage
+	)
+	{
+		this->errorMessage = std::string(errorMessage);
+	}
 
 #pragma endregion
 
 
 #pragma region Methods
 
-const char* Callisto::Framework::HoldStringException::what() const
-{
-    return this->errorMessage.c_str();
-}
+	const char* HoldStringException::what() const
+	{
+		return this->errorMessage.c_str();
+	}
 
-const std::string& Callisto::Framework::HoldStringException::GetMessage() const
-{
-    return this->errorMessage;
-}
+	const std::string& HoldStringException::GetMessage() const
+	{
+		return this->errorMessage;
+	}
 
-void Callisto::Framework::HoldStringException::MoveMessageTo(std::string& message)
-{
-    message = std::move(this->errorMessage);
-}
+	void HoldStringException::MoveMessageTo(std::string& message)
+	{
+		message = std::move(this->errorMessage);
+	}
 
 #pragma endregion
+}

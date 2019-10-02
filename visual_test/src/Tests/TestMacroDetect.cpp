@@ -6,7 +6,7 @@
 // parent header
 #include <Tests/TestMacroDetect.hpp>
 // test component
-#include <Native/MacroDetect.h>
+#include <Callisto/Native/MacroDetect.h>
 // std
 #include <iostream>
 
