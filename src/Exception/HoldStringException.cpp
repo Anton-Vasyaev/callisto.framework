@@ -53,4 +53,11 @@ namespace Callisto::Framework
 	}
 
 #pragma endregion
+
+
+	void throw_hold_string()
+	{
+		auto message = std::string("sobaka");
+		throw HoldStringException(std::move(message));
+	}
 }

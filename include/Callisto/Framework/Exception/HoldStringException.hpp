@@ -31,7 +31,8 @@ namespace Callisto::Framework
 
         void CALLISTO_CALL MoveMessageTo(std::string& message);
     };
- 
+
+	void throw_hold_string();
 }
 
 #endif
