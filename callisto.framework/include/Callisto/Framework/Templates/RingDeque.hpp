@@ -19,15 +19,14 @@
 
 namespace Callisto::Framework
 {
-    namespace Templates
+	template<
+		class T,
+		class AccessType = NoneLock
+	>
+    class RingDeque
     {
-        template<
-            class T,
-            class AccessType = NoneLock>
-        class RingDeque
-        {
-        protected:
-            #pragma region Data
+    protected:
+	#pragma region Data
 
 			std::mutex _locker;
 			
@@ -116,7 +115,7 @@ namespace Callisto::Framework
 
             #pragma endregion
         };
-    }
+
 }
 
 #endif

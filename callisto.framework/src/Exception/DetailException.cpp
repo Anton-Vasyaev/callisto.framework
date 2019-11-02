@@ -6,9 +6,9 @@
 #include <boost/stacktrace.hpp>
 
 
-
 namespace Callisto::Framework
 {
+#pragma region ConstructAndDestruct
 
 	DetailException::DetailException(
 		std::string& errorMessage, 
@@ -19,10 +19,19 @@ namespace Callisto::Framework
 		std::stringstream ss;
 		ss << "In file:" << fileName << std::endl;
 		ss << "At line:" << line << std::endl;
-		ss << "Call stack:\n" << boost::stacktrace::stacktrace() << std::endl;
+		ss << "Call stack:\n";
+		auto stacktrace = boost::stacktrace::stacktrace();
+		for (auto& frame : stacktrace)
+		{
+			ss << "(" << frame.address() << "):" << frame.name() << std::endl;
+		}
 		ss << "Error message:\n" << errorMessage << std::endl;
 		this->errorMessage = ss.str();
 	}
+
+#pragma endregion
+
+#pragma region Methods
 
 	const char* CALLISTO_CALL DetailException::what() const
 	{
@@ -38,4 +47,6 @@ namespace Callisto::Framework
 	{
 		message = std::move(this->errorMessage);
 	}
+
+#pragma endregion
 }

@@ -1,7 +1,8 @@
-build
-out
 .vs
 .vscode
+
+build
+out
 build_result
 subproject
 packages
