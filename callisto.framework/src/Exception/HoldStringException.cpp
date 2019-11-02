@@ -42,7 +42,7 @@ namespace Callisto::Framework
 		return this->errorMessage.c_str();
 	}
 
-	const std::string& HoldStringException::GetMessage() const
+	const std::string& HoldStringException::GetErrorMessage() const
 	{
 		return this->errorMessage;
 	}
@@ -57,7 +57,7 @@ namespace Callisto::Framework
 
 	void throw_hold_string()
 	{
-		auto message = std::string("sobaka");
+		auto message = std::string("throw from callisto.framework");
 		throw HoldStringException(std::move(message));
 	}
 }

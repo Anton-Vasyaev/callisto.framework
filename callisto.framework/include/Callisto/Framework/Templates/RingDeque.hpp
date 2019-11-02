@@ -9,13 +9,15 @@
 // std
 #include <memory>
 #include <stdexcept>
+#include <mutex>
+#include <atomic>
 // project
 #include <Callisto/Native/Types.h>
 #include <Callisto/Auxiliary/Enums.hpp>
 
 
 
-namespace Callisto
+namespace Callisto::Framework
 {
     namespace Templates
     {
@@ -27,6 +29,8 @@ namespace Callisto
         protected:
             #pragma region Data
 
+			std::mutex _locker;
+			
             std::unique_ptr<T> _data;
             t_size _size;
             t_size _tail;

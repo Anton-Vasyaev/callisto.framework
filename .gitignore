@@ -3,5 +3,8 @@ out
 .vs
 .vscode
 build_result
+subproject
+packages
+
 CMakeSettings.json
 *.pdb

@@ -1,15 +1,16 @@
 #ifndef CALLISTO_ENUMS_HPP
 #define CALLISTO_ENUMS_HPP
 
-namespace Callisto
+namespace Callisto::Framework
 {
     #pragma region MultiThreadAccessType
 
-    class NoneLock { };
-
-    class ThreadLock { };
-
-    class AtomicLock { };
+	enum MultiThreadAccessType
+	{
+		NoneLock,
+		Atomic,
+		Thread
+	};
 
     #pragma endregion
 

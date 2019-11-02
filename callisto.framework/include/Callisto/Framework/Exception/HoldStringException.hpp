@@ -5,6 +5,7 @@
 
 #ifndef CALLISTO_FRAMEWORK_HOLD_STRING_EXCEPTION_HPP
 #define CALLISTO_FRAMEWORK_HOLD_STRING_EXCEPTION_HPP
+
 // std
 #include <string>
 #include <exception>
@@ -27,12 +28,10 @@ namespace Callisto::Framework
 
         virtual const char* CALLISTO_CALL what() const override;
 
-        const std::string& CALLISTO_CALL GetMessage() const;
+        const std::string& CALLISTO_CALL GetErrorMessage() const;
 
         void CALLISTO_CALL MoveMessageTo(std::string& message);
     };
-
-	void throw_hold_string();
 }
 
 #endif
