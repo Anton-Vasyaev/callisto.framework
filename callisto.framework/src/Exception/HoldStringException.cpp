@@ -37,7 +37,7 @@ namespace Callisto::Framework
 
 #pragma region Methods
 
-	const char* HoldStringException::what() const
+	const char* HoldStringException::what() const noexcept
 	{
 		return this->errorMessage.c_str();
 	}

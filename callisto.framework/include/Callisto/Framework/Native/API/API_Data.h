@@ -15,19 +15,19 @@ typedef struct
 } API_Buffer;
 
 // STRING
-typedef enum Coding
+typedef enum e_CodingType
 {
-    Coding_ASCII,
-    Coding_UTF8,
-    Coding_UTF16,
-    Coding_UTF32,
-	Coding_Unknown
-};
+    CodingType_ASCII,
+    CodingType_UTF8,
+    CodingType_UTF16,
+    CodingType_UTF32,
+	CodingType_Unknown
+} CodingType;
 
 typedef struct
 {
 	void* data;
-    Coding coding;
+    CodingType codingType;
     t_size size;
 } API_String;
 

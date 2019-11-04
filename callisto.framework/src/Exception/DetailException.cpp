@@ -5,12 +5,11 @@
 // 3rdparty
 #include <boost/stacktrace.hpp>
 
-
 namespace Callisto::Framework
 {
 #pragma region ConstructAndDestruct
 
-	DetailException::DetailException(
+	CALLISTO_CALL Callisto::Framework::DetailException::DetailException(
 		std::string& errorMessage, 
 		const char* fileName, 
 		int line
@@ -33,7 +32,7 @@ namespace Callisto::Framework
 
 #pragma region Methods
 
-	const char* CALLISTO_CALL DetailException::what() const
+	const char* CALLISTO_CALL DetailException::what() const noexcept
 	{
 		return this->errorMessage.c_str();
 	}

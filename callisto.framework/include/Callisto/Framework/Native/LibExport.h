@@ -15,8 +15,8 @@
 
 
 #ifdef MACRO_DETECT_LINUX
-    #define CALLISTO_API
-    #define CALLISTO_CALL
+    #define CALLISTO_EXPORT     //__attribute__((visibility("default")))
+    #define CALLISTO_CALL       //__attribute__ ((__cdecl__))
 #endif
 
 #endif

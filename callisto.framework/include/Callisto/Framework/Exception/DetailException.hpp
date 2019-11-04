@@ -22,19 +22,21 @@ namespace Callisto::Framework
 
 	public:
 		// construct and destruct
-		DetailException(
+		CALLISTO_CALL DetailException(
 			std::string& errorMessage, 
 			const char* fileName, 
 			int line
 		);
 
 		// methods
-		virtual const char* CALLISTO_CALL what() const override;
+		virtual const char* CALLISTO_CALL what() const noexcept override;
 
 		const std::string& CALLISTO_CALL GetErrorMessage() const;
 
 		void CALLISTO_CALL MoveMessageTo(std::string& message);
 	};
+
+	void CALLISTO_CALL print();
 }
 
 #define THROW_DETAIL(ss) throw Callisto::Framework::DetailException(ss, __FILE__, __LINE__);

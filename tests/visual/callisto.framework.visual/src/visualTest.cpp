@@ -2,7 +2,6 @@
 // Copyright (c) 2019
 // Vasyaev Anton
 //
-
 // std
 #include <iostream>
 // project

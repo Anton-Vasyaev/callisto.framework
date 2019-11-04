@@ -14,7 +14,6 @@
 #include <Callisto/Framework/Native/API/API_Data.h>
 
 
-
 namespace Callisto::Framework
 {
 	CALLISTO_EXPORT std::string CALLISTO_CALL getString(API_String str);

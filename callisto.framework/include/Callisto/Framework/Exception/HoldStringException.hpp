@@ -26,7 +26,7 @@ namespace Callisto::Framework
 
 		CALLISTO_CALL HoldStringException(const char* errorMessage);
 
-        virtual const char* CALLISTO_CALL what() const override;
+        virtual const char* CALLISTO_CALL what() const noexcept override;
 
         const std::string& CALLISTO_CALL GetErrorMessage() const;
 
