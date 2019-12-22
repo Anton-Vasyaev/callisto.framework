@@ -40,10 +40,10 @@ void show_unique_handler()
 {
     using namespace callisto::framework;
 
-    auto handler_5_10 = UniqueScopeHandler<disposable_struct>(
+    auto handler_5_10 = UniqueHandler<disposable_struct>(
         create_struct(5, 10)
     );
-    auto handler_2_4 = UniqueScopeHandler<disposable_struct>(
+    auto handler_2_4 = UniqueHandler<disposable_struct>(
         create_struct(2, 4)
     );
 

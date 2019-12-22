@@ -14,7 +14,7 @@ namespace callisto::framework
 
 
     template<typename Type, typename DisposerType=DefaultDisposer<Type>>
-    class UniqueScopeHandler
+    class UniqueHandler
     {
     private:
         using data_type = Type;
@@ -36,7 +36,7 @@ namespace callisto::framework
         }
 
         inline void move_from_other(
-            UniqueScopeHandler&& other_handler
+            UniqueHandler&& other_handler
         )
         {
             this->destroy();
@@ -51,14 +51,14 @@ namespace callisto::framework
     public:
         #pragma region ConstructAndDestruct
 
-        UniqueScopeHandler() { }
+        UniqueHandler() { }
 
-        ~UniqueScopeHandler()
+        ~UniqueHandler()
         {
             this->destroy();
         }
 
-        UniqueScopeHandler(
+        UniqueHandler(
             Type data
         ) 
         { 
@@ -66,12 +66,12 @@ namespace callisto::framework
             this->has_data = true;
         }
 
-        UniqueScopeHandler(
-            const UniqueScopeHandler&
+        UniqueHandler(
+            const UniqueHandler&
         ) = delete;
 
-        UniqueScopeHandler(
-            UniqueScopeHandler&& other_handler
+        UniqueHandler(
+            UniqueHandler&& other_handler
         )
         {
             this->move_from_other(std::move(other_handler));
@@ -102,10 +102,10 @@ namespace callisto::framework
 
         #pragma region Operators
 
-        void operator=(UniqueScopeHandler&) = delete;
+        void operator=(UniqueHandler&) = delete;
 
         void operator=(
-            UniqueScopeHandler&& other_handler
+            UniqueHandler&& other_handler
         )
         {
             this->move_from_other(std::move(other_handler));
