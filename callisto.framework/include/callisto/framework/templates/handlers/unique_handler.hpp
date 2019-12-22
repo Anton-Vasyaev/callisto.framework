@@ -3,16 +3,12 @@
 
 // std
 #include <utility>
+// project
+#include "default_disposer.hpp"
+
 
 namespace callisto::framework
 {
-    template<typename Type>
-    struct DefaultDisposer
-    {
-        void operator()(Type data);
-    };
-
-
     template<typename Type, typename DisposerType=DefaultDisposer<Type>>
     class UniqueHandler
     {

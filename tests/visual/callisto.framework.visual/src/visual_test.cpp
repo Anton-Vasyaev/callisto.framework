@@ -13,7 +13,7 @@ int main()
     std::cout << "\n\n";
     show_platform_macros();
     std::cout << "\n\n";
-    show_unique_handler();
+    show_handlers();
 
     std::cout << "Press key to exit...\n";
 	std::getchar();

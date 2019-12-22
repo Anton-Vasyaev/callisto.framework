@@ -5,6 +5,6 @@ void show_exception();
 
 void show_platform_macros();
 
-void show_unique_handler();
+void show_handlers();
 
 #endif
