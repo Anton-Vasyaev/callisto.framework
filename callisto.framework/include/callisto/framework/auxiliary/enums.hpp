@@ -1,7 +1,7 @@
-#ifndef CALLISTO_ENUMS_HPP
-#define CALLISTO_ENUMS_HPP
+#ifndef CALLISTO_FRAMEWORK_ENUMS_HPP
+#define CALLISTO_FRAMEWORK_ENUMS_HPP
 
-namespace Callisto::Framework
+namespace callisto::framework
 {
     #pragma region MultiThreadAccessType
 

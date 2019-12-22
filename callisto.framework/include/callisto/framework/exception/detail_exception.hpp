@@ -10,36 +10,34 @@
 #include <string>
 #include <exception>
 // project
-#include <Callisto/Framework/Native/LibExport.h>
+#include <callisto/framework/native/lib_export.h>
 
 
-namespace Callisto::Framework
+namespace callisto::framework
 {
 	class CALLISTO_EXPORT DetailException : public std::exception
 	{
 	private:
-		std::string errorMessage;
+		std::string error_message;
 
 	public:
 		// construct and destruct
 		CALLISTO_CALL DetailException(
-			std::string& errorMessage, 
-			const char* fileName, 
+			std::string& error_message, 
+			const char* file_name, 
 			int line
 		);
 
 		// methods
 		virtual const char* CALLISTO_CALL what() const noexcept override;
 
-		const std::string& CALLISTO_CALL GetErrorMessage() const;
+		const std::string& CALLISTO_CALL get_error_message() const;
 
-		void CALLISTO_CALL MoveMessageTo(std::string& message);
+		void CALLISTO_CALL move_message_to(std::string& message);
 	};
-
-	void CALLISTO_CALL print();
 }
 
-#define THROW_DETAIL(ss) throw Callisto::Framework::DetailException(ss, __FILE__, __LINE__);
+#define THROW_DETAIL(ss) throw callisto::framework::DetailException(ss, __FILE__, __LINE__);
 
 
 #endif

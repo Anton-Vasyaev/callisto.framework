@@ -18,7 +18,6 @@ endif()
 #-------------------------------------------------------------------------------------------------#
 # C++ properties
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # 3rd party
 if(UNIX)
 	find_package(Threads REQUIRED)

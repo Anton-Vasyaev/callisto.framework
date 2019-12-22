@@ -10,14 +10,15 @@
 #include <string>
 #include <exception>
 // project
-#include <Callisto/Framework/Native/LibExport.h>
+#include <callisto/framework/native/lib_export.h>
 
-namespace Callisto::Framework
+
+namespace callisto::framework
 {
     class CALLISTO_EXPORT HoldStringException : public std::exception
     {
     private:
-        std::string errorMessage;
+        std::string error_message;
 
     public:
         CALLISTO_CALL HoldStringException(std::string& errorMessage);
@@ -27,10 +28,9 @@ namespace Callisto::Framework
 		CALLISTO_CALL HoldStringException(const char* errorMessage);
 
         virtual const char* CALLISTO_CALL what() const noexcept override;
+        const std::string& CALLISTO_CALL get_error_message() const;
 
-        const std::string& CALLISTO_CALL GetErrorMessage() const;
-
-        void CALLISTO_CALL MoveMessageTo(std::string& message);
+        void CALLISTO_CALL move_message_to(std::string& message);
     };
 }
 

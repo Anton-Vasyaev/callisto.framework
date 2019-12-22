@@ -5,7 +5,8 @@
 #ifndef CALLISTO_FRAMEWORK_API_DATA_H
 #define CALLISTO_FRAMEWORK_API_DATA_H
 
-#include <Callisto/Framework/Native/Types.h>
+// project
+#include <callisto/framework/native/types.h>
 
 
 typedef struct
@@ -27,7 +28,7 @@ typedef enum e_CodingType
 typedef struct
 {
 	void* data;
-    CodingType codingType;
+    CodingType coding_type;
     t_size size;
 } API_String;
 

@@ -12,8 +12,8 @@ add_subdirectory(
 #--------------------------------------------CONFIGURE--------------------------------------------#
 #-------------------------------------------------------------------------------------------------#
 # C++ properties
-set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 17)
 
 # set output
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build_result/${CALLISTO_BUILD_PATH}/binary)

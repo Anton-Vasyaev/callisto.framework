@@ -4,32 +4,32 @@
 //
 
 // parent header
-#include <Tests/TestExceptions.hpp>
+#include <shows/show_declarations.hpp>
 // test component
-#include <Callisto/Framework/Exception/HoldStringException.hpp>
-#include <Callisto/Framework/Exception/DetailException.hpp>
+#include <callisto/framework/exception/hold_string_exception.hpp>
+#include <callisto/framework/exception/detail_exception.hpp>
 // std
 #include <iostream>
 
-using namespace Callisto::Framework;
+using namespace callisto::framework;
 
-void throwHolderException()
+void throw_holder_exception()
 {
 	std::string message = "Message in HoldStringException\n";
 	throw HoldStringException(std::move(message));
 }
 
-void throwDetailException()
+void throw_detail_exception()
 {
 	std::string message = "Message in DetailException\n";
 	THROW_DETAIL(message);
 }
 
-void test_exceptions()
+void show_exception()
 {
 	try 
 	{ 
-		throwHolderException();
+		throw_holder_exception();
 	}
     catch(const std::exception& e)
     {
@@ -38,7 +38,7 @@ void test_exceptions()
 
 	try
 	{
-		throwDetailException();
+		throw_detail_exception();
 	}
 	catch (const std::exception & e)
 	{

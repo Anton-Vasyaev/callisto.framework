@@ -6,10 +6,9 @@
 #define CALLISTO_TYPES_H
 
 // macro
-#include <Callisto/Framework/Native/MacroDetect.h>
+#include <callisto/framework/native/platform_macros.h>
 // std
 #include <cstdint>
-
 
 
 typedef int8_t      t_int8;
@@ -30,7 +29,7 @@ typedef float       t_float32;
 typedef double      t_float64;
 
 
-#ifdef MACRO_DETECT_64BIT
+#ifdef CALLISTO_PLATFORM_64BIT
 typedef uint64_t t_size;
 typedef int64_t t_ssize;
 #else
