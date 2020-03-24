@@ -8,14 +8,14 @@ cd Conan_x64
 REM ----For Debug
 mkdir Debug
 cd Debug
-conan install ../../.. -s build_type=Debug -s arch=x86_64
+conan install ../../.. -s build_type=Debug -s arch=x86_64 --build missing
 
 cd ..
 
 REM ----For Release
 mkdir Release
 cd Release
-conan install ../../.. -s build_type=Release -s arch=x86_64
+conan install ../../.. -s build_type=Release -s arch=x86_64 --build missing
 
 cd ../../..
 pause
