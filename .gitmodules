@@ -1,4 +1,0 @@
-[submodule "submodules/callisto.configure"]
-	path = submodules/callisto.configure
-	url = https://github.com/Anton-Vasyaev/callisto.configure.git
-	branch = master
