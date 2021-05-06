@@ -14,7 +14,7 @@ namespace c_f = callisto::framework;
 
 void throw_holder_exception()
 {
-	std::string message = "Message in HoldStringException\n";
+	std::string message = "message in string_holder_exception\n";
 	throw c_f::string_holder_exception(std::move(message));
 }
 
@@ -22,7 +22,7 @@ void throw_builder_exception()
 {
 	std::string name = "Andrew";
 	throw c_f::string_builder_exception(
-		"5 is", 5, ", but 2 is ", 2, ". My name is ", name 
+		"5 is ", 5, ", but 2 is ", 2, ". My name is ", name 
 	);
 }
 

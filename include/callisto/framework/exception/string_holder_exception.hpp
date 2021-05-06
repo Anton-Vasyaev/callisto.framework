@@ -2,12 +2,13 @@
 
 // std
 #include <sstream>
-#include <exception>
+// project
+#include "exception.hpp"
 
 namespace callisto::framework
 {
     template<typename T>
-    class basic_string_holder_exception : public std::exception
+    class basic_string_holder_exception : public c_f::exception
     {
     public:
         using string_type = T;

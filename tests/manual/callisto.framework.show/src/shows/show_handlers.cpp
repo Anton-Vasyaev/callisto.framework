@@ -14,12 +14,13 @@ struct disposable_struct
 
 disposable_struct create_struct(int a, int b)
 {
+    std::cout << "call create struct (a:" << a << ", b:" << b << ")\n";
     return { a, b };
 }
 
-void dispose_struct(disposable_struct ob)
+void destroy_struct(disposable_struct ob)
 {
-    std::cout << "obj before dispose (a:" << ob.a << ", b:" << ob.b << ")\n";
+    std::cout << "call destroy struct (a:" << ob.a << ", b:" << ob.b << ")\n";
 }
 
 namespace callisto::framework
@@ -29,7 +30,7 @@ namespace callisto::framework
     {
         void operator()(disposable_struct data)
         {
-            dispose_struct(data);
+            destroy_struct(data);
         }
     };
 }

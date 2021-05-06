@@ -21,7 +21,7 @@ file(GLOB_RECURSE CALLISTO_FRAMEWORK_SRC "include/*.hpp" "include/*.h" "src/*.hp
 include_directories(include)
 include_directories(src)
 add_library(${TARGET_NAME} ${CALLISTO_FRAMEWORK_SRC})
-
+message(${CALLISTO_FRAMEWORK_SRC})
 
 # TESTS AND MANUALS
 

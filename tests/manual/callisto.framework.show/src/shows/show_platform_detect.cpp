@@ -16,6 +16,10 @@
 void show_platform_detect()
 {
 // DETECT OS
-    std::cout << "OS:" << CALLISTO_PIDOR << std::endl;
-
+    std::cout << "OS:                   " << CALLISTO_OS_NAME << std::endl;
+    std::cout << "OS FAMILY:            " << CALLISTO_OS_FAMILY_NAME << std::endl;
+    std::cout << "ARCHITECTURE:         " << CALLISTO_ARCHITECTURE_NAME << std::endl;
+    std::cout << "ARCHITECTURE FAMILY:  " << CALLISTO_ARCHITECTURE_FAMILY_NAME << std::endl;
+    std::cout << "BIT DESIGN:           " << CALLISTO_BIT_DESIGN_NAME << std::endl;
+ 
 }
