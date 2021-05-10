@@ -3,7 +3,7 @@
 // DETECT OS
 #if defined(_WIN64) || defined(_WIN32)
     #define CALLISTO_OS_WINDOWS
-    #define CALLISTO_TO_OS_NAME "Windows"
+    #define CALLISTO_OS_NAME "Windows"
 #elif defined(__linux__)
     #define CALLISTO_OS_LINUX
     #define CALLISTO_OS_NAME "Linux"
@@ -17,7 +17,7 @@
     #define CALLISTO_OS_FAMILY_NAME "Unix"
 #endif
 
-
+    
 //
 // DETECT ARCHITECTURE
 //

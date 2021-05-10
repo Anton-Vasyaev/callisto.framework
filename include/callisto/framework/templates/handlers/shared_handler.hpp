@@ -25,8 +25,8 @@ namespace callisto::framework
 
         disposer_type disposer;
 
-
         size_t* ref_counter = nullptr;
+
         std::mutex* mutex = nullptr;
 
         bool has_handler = false;
@@ -42,7 +42,7 @@ namespace callisto::framework
             {
                 std::unique_lock<std::mutex> locker(*(this->mutex));
                 (*(this->ref_counter))--;
-                if ((*(this->ref_counter)) == 0)
+                if (*(this->ref_counter) == 0)
                 {
                     disposer(this->data);
                 }
@@ -69,9 +69,9 @@ namespace callisto::framework
             shared_handler& other_handler
         )
         {
-            this->destroy();
-
             std::unique_lock(*(other_handler.mutex));
+
+            this->destroy();
 
             this->data = other_handler.data;
             this->ref_counter = other_handler.ref_counter;
