@@ -60,10 +60,9 @@ size_t numeric::get_byte_size_of(numeric_type numeric_type)
                 numeric_type, "."
             );
     }
-};
+}
 
-
-#define DECLARE_GET_NUMERIC_TYPE_SPECIALIZATION(type)                   \
+    #define DECLARE_GET_NUMERIC_TYPE_SPECIALIZATION(type)               \
     template<>                                                          \
     numeric_type numeric::get_numeric_type_of<numeric::type>()          \
     {                                                                   \
@@ -91,4 +90,5 @@ DECLARE_GET_NUMERIC_TYPE_SPECIALIZATION(int64);
 
 DECLARE_GET_NUMERIC_TYPE_SPECIALIZATION(float32);
 DECLARE_GET_NUMERIC_TYPE_SPECIALIZATION(float64);
+
 }

@@ -4,7 +4,7 @@ project(callisto.framework)
 
 set(TARGET_NAME callisto_framework)
 
-option(CALLISTO_FRAMEWORK_SHARED "Build the shared library" OFF)
+option(CALLISTO_FRAMEWORK_SHARED "Build the shared library" ON)
 
 set(CMAKE_CXX_STANDARD 20)
 
@@ -27,16 +27,14 @@ endif()
 
 include_directories(include)
 
-add_library(${TARGET_NAME} ${LIBRARY_TYPE} ${CALLISTO_FRAMEWORK_SRC})
-target_include_directories(${TARGET_NAME} PUBLIC include)
-target_include_directories(${TARGET_NAME} PRIVATE src)
+add_library(callisto_framework ${LIBRARY_TYPE} ${CALLISTO_FRAMEWORK_SRC})
+target_include_directories(callisto_framework PRIVATE src)
 
 # TESTS AND MANUALS
 
 # set targets for tests/manual/callisto.framework.show
-if(NOT CONAN_CREATE)
+if(NOT PACKAGE_CREATE)
     set(CALLISTO_FRAMEWORK_SHOW_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests/manual/callisto.framework.show)
-    include_directories(${CALLISTO_FRAMEWORK_SHOW_DIR})
     file(
         GLOB_RECURSE 
         CALLISTO_FRAMEWORK_SHOW_SRC
@@ -47,4 +45,6 @@ if(NOT CONAN_CREATE)
     )
     add_executable(callisto_framework_show ${CALLISTO_FRAMEWORK_SHOW_SRC})
     target_include_directories(callisto_framework_show PRIVATE ${CALLISTO_FRAMEWORK_SHOW_DIR}/src)
+
+    target_link_libraries(callisto_framework_show callisto_framework)
 endif()
