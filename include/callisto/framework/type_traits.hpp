@@ -2,7 +2,7 @@
 
 #include <type_traits>
 
-namespace terramagnia::framework
+namespace callisto::framework
 {
 
 template<typename T, typename... Rest>

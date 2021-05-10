@@ -4,7 +4,7 @@ project(callisto.framework)
 
 set(TARGET_NAME callisto_framework)
 
-option(CALLISTO_FRAMEWORK_SHARED "Build the shared library" ON)
+option(CALLISTO_FRAMEWORK_SHARED "Build the shared library" OFF)
 
 set(CMAKE_CXX_STANDARD 20)
 
