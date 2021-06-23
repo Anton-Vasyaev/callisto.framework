@@ -25,25 +25,21 @@ else()
     set(LIBRARY_TYPE STATIC)
 endif()
 
-include_directories(include)
-
 add_library(callisto_framework ${LIBRARY_TYPE} ${CALLISTO_FRAMEWORK_SRC})
+target_include_directories(callisto_framework PUBLIC include)
 target_include_directories(callisto_framework PRIVATE src)
-
-# TESTS AND MANUALS
 
 # set targets for tests/manual/callisto.framework.show
 if(NOT PACKAGE_CREATE)
-    set(CALLISTO_FRAMEWORK_SHOW_DIR ${CMAKE_CURRENT_SOURCE_DIR}/tests/manual/callisto.framework.show)
+    set(CALLISTO_FRAMEWORK_SHOW_DIR ${CMAKE_CURRENT_SOURCE_DIR}/manuals/callisto.framework.show)
     file(
         GLOB_RECURSE 
         CALLISTO_FRAMEWORK_SHOW_SRC
-        "${CALLISTO_FRAMEWORK_SHOW_DIR}/src/*hpp"
         "${CALLISTO_FRAMEWORK_SHOW_DIR}/src/*.cpp"
-        "${CALLISTO_FRAMEWORK_SHOW_DIR}/src/*.h" 
         "${CALLISTO_FRAMEWORK_SHOW_DIR}/src/*.c" 
     )
     add_executable(callisto_framework_show ${CALLISTO_FRAMEWORK_SHOW_SRC})
+    target_include_directories(callisto_framework_show PUBLIC include)
     target_include_directories(callisto_framework_show PRIVATE ${CALLISTO_FRAMEWORK_SHOW_DIR}/src)
 
     target_link_libraries(callisto_framework_show callisto_framework)
