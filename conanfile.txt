@@ -1,6 +1,9 @@
 [requires]
 gtest/1.8.1
 
+[options]
+gtest:shared=True
+
 [generators]
 cmake_find_package
 

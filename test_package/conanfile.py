@@ -9,10 +9,11 @@ class CallistoFrameworkTestConan(ConanFile):
     generators = "cmake"
 
     requires = "gtest/1.8.1"
-    #default_options = "gtest:shared=True"
+    default_options = "gtest:shared=True"
 
     def build(self):
         self.cmake = CMake(self)
+        self.cmake.definitions["CREATE_PACKAGE"] = "1"
         self.cmake.configure()
         self.cmake.build()
 
