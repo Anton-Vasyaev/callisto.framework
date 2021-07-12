@@ -3,6 +3,12 @@ cmake_minimum_required(VERSION 3.19)
 project(callisto.framework.test CXX)
 set(TARGET_NAME callisto_framework_auto)
 
+# for conan
+if(DEFINED CREATE_PACKAGE)
+    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+    CONAN_BASIC_SETUP()
+endif()
+
 set(CMAKE_VERBOSE_MAKEFILE TRUE)
 set(CMAKE_CXX_STANDARD 20)
 
@@ -10,26 +16,14 @@ if(NOT DEFINED CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE "Debug")
 endif()
 
-
-# set targets for callisto.framework
 file(GLOB_RECURSE AUTO_SRC "src/*.c" "src/*.cpp")
-
 add_executable(${TARGET_NAME} ${AUTO_SRC})
 
 # for conan
 if(DEFINED CREATE_PACKAGE) 
-    include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    CONAN_BASIC_SETUP()
-    target_link_libraries(${TARGET_NAME} ${CONAN_LIBS})
     message("CONAN LIBS:${CONAN_LIBS}")
-    ENABLE_TESTING()
-    ADD_TEST(
-        NAME callisto_framework_test
-        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
-        COMMAND ${TARGET_NAME}
-    )
-
-    #target_include_directories(${TARGET_NAME} PRIVATE ${CONAN_INCLUDE_DIRS})
+    target_link_libraries(${TARGET_NAME} ${CONAN_LIBS})
+    target_include_directories(${TARGET_NAME} PRIVATE ${CONAN_INCLUDE_DIRS})
 # for manual testing
 else()
     # link with callisto.framework

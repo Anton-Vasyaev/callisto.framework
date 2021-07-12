@@ -1,14 +1,14 @@
 // test
-//#include <callisto/framework/exception.hpp>
+#include <callisto/framework/exception.hpp>
 // std
 #include <iostream>
 // 3rd party
 #include <gtest/gtest.h>
 
-//namespace c_f = callisto::framework;
+namespace c_f = callisto::framework;
 
 TEST(FooTest, MethodBarDoesAbc) {
-    /*
+
     try
     {
         throw c_f::string_builder_exception("Int is ", 32, "bit");
@@ -17,7 +17,6 @@ TEST(FooTest, MethodBarDoesAbc) {
     {
         std::cout << e.what() << '\n';
     }
-    */
 
     EXPECT_EQ(1, 1);
 }
