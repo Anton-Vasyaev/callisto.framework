@@ -4,11 +4,13 @@ import os
 from conans import ConanFile, CMake, tools
 
 
-class CallistoFrameworkTestConan(ConanFile):
-    settings = "os", "compiler", "arch", "build_type"
+class TestConanCallistoFramework(ConanFile):
+    name = "TestConanCallistoFramework"
+
+    settings   = "os", "compiler", "arch", "build_type"
     generators = "cmake"
 
-    requires = "gtest/1.8.1"
+    requires        = "gtest/1.8.1"
     default_options = "gtest:shared=True"
 
     def build(self):

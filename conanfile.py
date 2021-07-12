@@ -5,8 +5,8 @@ class CallistoFrameworkConan(ConanFile):
     version = "0.1.0"
     license = "BSD"
     settings = "os", "compiler", "build_type", "arch"
-
-    exports = "*"
+    generators = "cmake"
+    exports="*"
 
     options = { 
         "shared" : [True, False]
@@ -14,14 +14,12 @@ class CallistoFrameworkConan(ConanFile):
     default_options = {
         "shared" : False
     }
-    generators = "cmake"
-
 
     def build(self):
         cmake = CMake(self)
         cmake.definitions["CALLISTO_FRAMEWORK_SHARED"] = self.options.shared
         cmake.definitions["CREATE_PACKAGE"] = "1"
-        cmake.configure()
+        cmake.configure(source_folder="callisto.framework")
         cmake.build()
 
 

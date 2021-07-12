@@ -19,11 +19,31 @@ add_executable(${TARGET_NAME} ${AUTO_SRC})
 # for conan
 if(DEFINED CREATE_PACKAGE) 
     include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-    conan_basic_setup()
+    CONAN_BASIC_SETUP()
     target_link_libraries(${TARGET_NAME} ${CONAN_LIBS})
-    message("!!!!!!!!!!!!!!!!! CONAN LIBS:${CONAN_LIBS}")
+    message("CONAN LIBS:${CONAN_LIBS}")
+    ENABLE_TESTING()
+    ADD_TEST(
+        NAME callisto_framework_test
+        WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/bin
+        COMMAND ${TARGET_NAME}
+    )
+
+    #target_include_directories(${TARGET_NAME} PRIVATE ${CONAN_INCLUDE_DIRS})
 # for manual testing
 else()
+    # link with callisto.framework
+    add_subdirectory(${CMAKE_SOURCE_DIR}/../callisto.framework ${CMAKE_CURRENT_BINARY_DIR}/callisto.framework)
+    target_link_libraries(${TARGET_NAME} callisto_framework)
+    add_custom_command(
+        TARGET ${TARGET_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} 
+        -E copy_if_different 
+        $<TARGET_FILE:callisto_framework> 
+        $<TARGET_FILE_DIR:${TARGET_NAME}>
+    )
+
+    # link with conan libraries
     set(CONAN_RUNTIME_DIR ${CMAKE_SOURCE_DIR}/../.runtime/conan/x64/${CMAKE_BUILD_TYPE})
     list(APPEND CMAKE_MODULE_PATH ${CONAN_RUNTIME_DIR})
     

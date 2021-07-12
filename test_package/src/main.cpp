@@ -1,14 +1,25 @@
 // test
-#include <callisto/framework/exception.hpp>
+//#include <callisto/framework/exception.hpp>
 // std
 #include <iostream>
 // 3rd party
 #include <gtest/gtest.h>
 
+//namespace c_f = callisto::framework;
+
 TEST(FooTest, MethodBarDoesAbc) {
-  const std::string input_filepath = "this/package/testdata/myinputfile.dat";
-  const std::string output_filepath = "this/package/testdata/myoutputfile.dat";
-  EXPECT_EQ(1, 1);
+    /*
+    try
+    {
+        throw c_f::string_builder_exception("Int is ", 32, "bit");
+    }
+    catch(const c_f::exception& e)
+    {
+        std::cout << e.what() << '\n';
+    }
+    */
+
+    EXPECT_EQ(1, 1);
 }
 
 int main(int argc, char **argv) {
