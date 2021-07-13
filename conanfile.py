@@ -2,7 +2,7 @@ from conans import ConanFile, CMake, tools
 
 class CallistoFrameworkConan(ConanFile):
     name       = 'callisto.framework'
-    version    = '0.1.0'
+    version    = '0.2.0'
     license    = 'BSD'
     settings   = 'os', 'compiler', 'build_type', 'arch'
     generators = 'cmake'
